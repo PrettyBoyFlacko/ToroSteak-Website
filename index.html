@@ -7,6 +7,15 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap');
 
+        :root {
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 3rem;
+            --spacing-xxl: 4rem;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -18,6 +27,7 @@
             color: #1a1a1a;
             font-family: 'Montserrat', sans-serif;
             background: #fafafa;
+            font-size: 16px;
         }
 
         h1, h2, h3 {
@@ -30,37 +40,37 @@
             left: 50%;
             transform: translateX(-50%);
             background: rgba(0, 0, 0, 0.95);
-            padding: 1.5rem 3rem;
-            border-radius: 0 0 30px 30px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            padding: var(--spacing-md) var(--spacing-xl);
+            border-radius: 0 0 2rem 2rem;
+            box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.2);
             z-index: 1001;
-            border: 1px solid rgba(212, 175, 55, 0.3);
+            border: 0.0625rem solid rgba(212, 175, 55, 0.3);
             border-top: none;
         }
 
         .top-logo img {
-            height: 120px;
+            height: 7.5rem;
             width: auto;
         }
 
         .header {
             position: fixed;
-            top: 0px;
+            top: 0;
             left: 0;
             right: 0;
             background: rgba(0, 0, 0, 0.95);
-            padding: 1.5rem 2rem;
+            padding: var(--spacing-md) var(--spacing-lg);
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 1000;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-bottom: 0.0625rem solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.1);
         }
 
         .nav-links {
             display: flex;
-            gap: 3rem;
+            gap: var(--spacing-xl);
         }
 
         .nav-links a {
@@ -69,19 +79,19 @@
             font-size: 1.1rem;
             font-weight: 300;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 0.125rem;
             transition: all 0.3s;
-            padding-bottom: 5px;
-            border-bottom: 1px solid transparent;
+            padding-bottom: 0.3125rem;
+            border-bottom: 0.0625rem solid transparent;
         }
 
         .nav-links a:hover {
             color: #d4af37;
-            border-bottom: 1px solid #d4af37;
+            border-bottom: 0.0625rem solid #d4af37;
         }
 
         .hero {
-            margin-top: 0px; 
+            margin-top: 0;
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("image.png");
             background-size: cover;
             background-position: center;
@@ -96,107 +106,73 @@
 
         .top-logo {
             position: absolute;
-            top: 100px; /* Position it down from the top of hero */
+            top: 6.25rem;
             left: 50%;
             transform: translateX(-50%);
             z-index: 1002;
-            padding: 2rem;
+            padding: var(--spacing-lg);
             background: rgb(255, 255, 255);
             border-radius: 65%;
-            border: 2px solid #d4af37;
-            box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+            border: 0.125rem solid #d4af37;
+            box-shadow: 0 0.25rem 1.875rem rgba(0,0,0,0.3);
         }
 
-        .top-logo img {
-            height: 120px;
-            width: auto;
-        }
         .hero::after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
-            height: 200px;
+            height: 12.5rem;
             background: linear-gradient(transparent, #fafafa);
         }
 
         .hero-content {
-            margin-top: 120px; /* Add space below logo */
+            margin-top: 7.5rem;
             z-index: 1;
         }
 
         .hero-content h1 {
             font-size: 5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin-bottom: var(--spacing-sm);
+            text-shadow: 0.125rem 0.125rem 0.25rem rgba(0,0,0,0.5);
         }
 
         .hero-content p {
             font-size: 1.8rem;
-            margin-bottom: 2rem;
+            margin-bottom: var(--spacing-lg);
             font-weight: 300;
-            letter-spacing: 2px;
+            letter-spacing: 0.125rem;
         }
 
         .btn-group {
             display: flex;
             flex-wrap: wrap;
-            gap: 1.5rem;
+            gap: var(--spacing-md);
             justify-content: center;
-            margin-top: 3rem;
+            margin-top: var(--spacing-xl);
         }
 
         .btn {
             display: inline-block;
-            padding: 1rem 2rem;
+            padding: var(--spacing-sm) var(--spacing-lg);
             background: #d4af37;
             color: white;
             text-decoration: none;
-            border-radius: 3px;
+            border-radius: 0.1875rem;
             transition: all 0.3s;
             font-size: 1.1rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            border: 1px solid #d4af37;
+            letter-spacing: 0.125rem;
+            border: 0.0625rem solid #d4af37;
         }
-
-        .btn:hover {
-            background: transparent;
-            color: #d4af37;
-            transform: translateY(-2px);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 1px solid #d4af37;
-        }
-
-        .section {
-            padding: 8rem 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
+        
 
         .menu-section {
-            margin-bottom: 6rem;
-            position: relative;
-            padding: 2rem;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            padding: var(--spacing-xxl) var(--spacing-lg);
+            max-width: 87.5rem;
+            margin: 0 auto;
         }
-
-        .menu-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(to right, transparent, #d4af37, transparent);
-        }
-
         .menu-section h2 {
             text-align: center;
             font-size: 3rem;
@@ -205,7 +181,6 @@
             position: relative;
             padding-bottom: 1rem;
         }
-
         .menu-section h2::after {
             content: '';
             position: absolute;
@@ -219,54 +194,33 @@
 
         .menu-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 1.5rem;
-            padding: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(21.875rem, 1fr));
+            gap: var(--spacing-md);
+            padding: var(--spacing-sm);
         }
 
         .menu-item {
             background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
+            padding: var(--spacing-md);
+            border-radius: 0.5rem;
             text-align: center;
             transition: all 0.3s;
             position: relative;
-            border: 1px solid rgba(0,0,0,0.05);
+            border: 0.0625rem solid rgba(0,0,0,0.05);
         }
 
         .menu-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            transform: translateY(-0.3125rem);
+            box-shadow: 0 0.9375rem 1.875rem rgba(0,0,0,0.2);
         }
 
         .menu-item img {
             width: 100%;
-            height: 250px;
+            height: 15.625rem;
             object-fit: cover;
-            border-radius: 5px;
-            margin-bottom: 1.5rem;
+            border-radius: 0.3125rem;
+            margin-bottom: var(--spacing-md);
         }
-
-        .menu-item h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: #1a1a1a;
-        }
-
-        .menu-item p {
-            color: #666;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        .menu-item .price {
-            color: #d4af37;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-top: 1.5rem;
-        }
-
         .contact {
             background: #1a1a1a;
             color: white;
@@ -328,7 +282,7 @@
             letter-spacing: 1px;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 48rem) {
             .hero-content h1 {
                 font-size: 3rem;
             }
@@ -338,11 +292,15 @@
             }
 
             .nav-links {
-                gap: 1.5rem;
+                gap: var(--spacing-md);
             }
 
             .nav-links a {
                 font-size: 1rem;
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -474,7 +432,7 @@
                 </div>
                 <div class="menu-item">
                     <h3>Ribeye Steak</h3>
-                    <p>12oz prime cut, juicy, well-marbled steak, grilled to perfection for rich flavor and tenderness.</p>
+                    <p>12oz prime cut, juicy, well-marbled steak, grilled to perfection for rich flavor and tenderness</p>
                     <p class="price">$32</p>
                 </div>
                 <div class="menu-item">
@@ -633,10 +591,12 @@
                 </div>
             </div>
         </div>
-    </section>>
+    </section>
 
     <footer class="footer">
         <p>&copy; 2025 Toro Steak & Cocktails. All rights reserved.</p>
     </footer>
 </body>
 </html>
+    
+
