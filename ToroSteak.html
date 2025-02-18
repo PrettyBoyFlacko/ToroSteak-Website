@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Cut Steakhouse | Premium Dining Experience</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #1a1a1a;
+            font-family: 'Montserrat', sans-serif;
+            background: #fafafa;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .top-logo {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.95);
+            padding: 1.5rem 3rem;
+            border-radius: 0 0 30px 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            z-index: 1001;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-top: none;
+        }
+
+        .top-logo img {
+            height: 120px;
+            width: auto;
+        }
+
+        .header {
+            position: fixed;
+            top: 0px;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.95);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s;
+            padding-bottom: 5px;
+            border-bottom: 1px solid transparent;
+        }
+
+        .nav-links a:hover {
+            color: #d4af37;
+            border-bottom: 1px solid #d4af37;
+        }
+
+        .hero {
+            margin-top: 0px; 
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("image.png");
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .top-logo {
+            position: absolute;
+            top: 100px; /* Position it down from the top of hero */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1002;
+            padding: 2rem;
+            background: rgb(255, 255, 255);
+            border-radius: 65%;
+            border: 2px solid #d4af37;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+        }
+
+        .top-logo img {
+            height: 120px;
+            width: auto;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 200px;
+            background: linear-gradient(transparent, #fafafa);
+        }
+
+        .hero-content {
+            margin-top: 120px; /* Add space below logo */
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 3rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #d4af37;
+            color: white;
+            text-decoration: none;
+            border-radius: 3px;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: 1px solid #d4af37;
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: #d4af37;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid #d4af37;
+        }
+
+        .section {
+            padding: 8rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .menu-section {
+            margin-bottom: 6rem;
+            position: relative;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .menu-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #d4af37, transparent);
+        }
+
+        .menu-section h2 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            color: #1a1a1a;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .menu-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 2px;
+            background: #d4af37;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+            padding: 1rem;
+        }
+
+        .menu-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s;
+            position: relative;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 1.5rem;
+        }
+
+        .menu-item h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        .menu-item p {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .menu-item .price {
+            color: #d4af37;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+        }
+
+        .contact {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 8rem 2rem;
+            position: relative;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #d4af37, transparent);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            padding: 3rem;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.3);
+            transition: all 0.3s;
+        }
+
+        .contact-info:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .contact-info h3 {
+            color: #d4af37;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .footer {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 3rem;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.4rem;
+            }
+
+            .nav-links {
+                gap: 1.5rem;
+            }
+
+            .nav-links a {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-logo">
+        <img src="unnamed.png"  alt="Toro Steak & Cocktails Logo">
+    </div>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Toro Steak & Cocktails</h1>
+            <p>Experience the finest cuts of premium beef</p>
+            <div class="btn-group">
+                <a href="#appetizers" class="btn">Appetizers</a>
+                <a href="#soups" class="btn btn-outline">Soups</a>
+                <a href="#salads" class="btn btn-outline">Salads</a>
+                <a href="#entrees" class="btn">Entrées</a>
+                <a href="#sides" class="btn btn-outline">Sides</a>
+                <a href="#kids" class="btn btn-outline">Kids Menu</a>
+                <a href="#drinks" class="btn btn-outline">Drinks</a>
+                <a href="#desserts" class="btn">Desserts</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="menu-section" id="appetizers">
+        <div class="menu-section">
+            <h2>Appetizers</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <h3>Shrimp Cocktails</h3>
+                    <p>5 Jumbo shrimp served with house-made cocktail sauce</p>
+                    <p class="price">$13</p>
+                </div>
+                <div class="menu-item">
+                    <h3>Fried Calamari</h3>
+                    <p>Deep fried calamari rings</p>
+                    <p class="price">$9</p>
+                </div>
+                <div class="menu-item">
+                    <h3>Chicken Wings</h3>
+                    <p>Chicken wings coated in juicy breading</p>
+                    <p class="price">$11</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-section" id="soups">
+            <h2>Soups</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <h3>Baked Potato Soup</h3>
+                    <p>Rich beef broth, caramelized onions, melted gruyère*</p>
+                    <p class="price">$5</p>
+                </div>
+                <div class="menu-item">
+                    <h3>Borscht Red Beets Soup</h3>
+                    <p>Creamy lobster soup with brandy and fresh herbs*</p>
+                    <p class="price">$5</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-section" id="salads">
+            <h2>Salads</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <h3>Chicken Caesar Salad</h3>
+                    <p>Romaine, garlic croutons, parmesan, house-made dressing*</p>
+                    <p class="price">$12</p>
+                </div>
+                <div class="menu-item">
+                    <h3>Grilled Salmon Salad</h3>
+                    <p>House salad topped with fresh grilled salmon filet</p>
+                    <p class="price">$16</p>
+                </div>
+                <div class="menu-item">
+                    <h3>Seared Ahi Tuna Salad</h3>
+                    <p>Fresh tuna seared to perfection over the salad</p>
+                    <p class="price">$18</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-section" id="sides">
+            <h2>Sides</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <h3>Creamy Mashed Potatoes</h3>
+                    <p>Whipped with butter and cream until perfectly smooth</p>
+                    <p class="price">$6</p>
+                </div>
+                <div class="menu-item">
+                    <h3>Baked Potatoes</h3>
+                    <p>With sour cream, chives, bacon, and cheddar*</p>
+                    <p class="price">$6</p>
+                </div>
+                <div class="menu-item">
+                    <h3>Stir Fried Zucchini</h3>
+                    <p>Zucchini*</p>
+                    <p class="price">$6</p>
+                </div>
+                <div class="menu-item">
+                    <h3>Grilled Asparagus</h3>
+                    <p>Fresh asparagus spears with olive oil and sea salt</p>
+                    <p class="price">$6</p>
+                </div>
+                <div class="menu-item">
+                    <h3>French Fries</h3>
+                    <p>fries*</p>
+                    <p class="price">$6</p>
+                </div>
+                <div class="menu-item">
+                    <h3>Stir Fried Mini Sweet Peppers</h3>
+                    <p>peppeerereps*</p>
+                    <p class="price">$6</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-section" id="entrees">
+            <h2>Entrées</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <h3>New York Steak</h3>
+                    <p>12oz prime cut, perfectly marbled for maximum flavor</p>
+                    <p class="price">$29</p>
+                </div>
+                <div class="menu-item">
+                    <h3>Ribeye Steak</h3>
+                    <p>12oz prime cut, perfectly marbled for maximum flavor</p>
+                    <p class="price">$32</p>
+                </div>
+                <div class="menu-item">
+                    <h3>Porterhouse Steak</h3>
+                    <p>22oz perfectly marbled for maximum flavor</p>
+                    <p class="price">$40</p>
+                </div>
+                <div class="menu-item">
+                    <h3>Filet Mignon</h3>
+                    <p>8oz center cut, tender and lean</p>
+                    <p class="price">$34</p>
+                </div>
+                <div class="menu-item">
+                    <h3>Grilled Salmon</h3>
+                    <p>8oz of Fresh Atlantic salmon with lemon herb butter</p>
+                    <p class="price">$24</p>
+                </div>
+                <div class="menu-item">
+                    <h3>Baby Back Ribs</h3>
+                    <p>Half</p>
+                    <p class="price">$21</p>
+                    <p>Full</p>
+                    <p class="price">$27</p>
+                </div>
+                <div class="menu-item">
+                    <h3>Oven Baked Half Chicken</h3>
+                    <p>chicken bake</p>
+                    <p class="price">$24</p>
+                </div>
+                <div class="menu-item">
+                    <h3>Cheese Burger</h3>
+                    <p>Cheese burger*</p>
+                    <p class="price">$18</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2>Extra Add-Ons</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <h3>Scallops</h3>
+                    <p>scallops</p>
+                    <p class="price">$8</p>
+                </div>
+                <div class="menu-item">
+                    <h3>Pan Fried Shrimps</h3>
+                    <p>shrimps fried</p>
+                    <p class="price">$8</p>
+                </div>
+                <div class="menu-item">
+                    <h3>Lobster</h3>
+                    <p>Fresh, tasty lobster cooked to perfection.</p>
+                    <p class="price">$14</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-section" id="kids">
+            <h2>Kids Entrées</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <h3>Junior Steak</h3>
+                    <p>6oz tender sirloin steak, served with crispy french fries</p>
+                    <p>Cooked to your child's preference</p>
+                    <p class="price">$15</p>
+                </div>
+                <div class="menu-item">
+                    <h3>Chicken Tenders</h3>
+                    <p>Hand-breaded chicken tenders with crispy french fries</p>
+                    <p>Served with honey mustard or BBQ sauce</p>
+                    <p class="price">$12</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-section" id="drinks">
+            <h2>Drinks</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <h3>Wine Selection</h3>
+                    <p>Extensive wine list available. Ask your server for recommendations</p>
+                    <p class="price">Market Price</p>
+                </div>
+                <div class="menu-item">
+                    <h3>Craft Cocktails</h3>
+                    <p>Classic and signature cocktails made with premium spirits</p>
+                    <p class="price">From $14</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-section" id="desserts">
+            <h2>Desserts</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <h3>New York Cheesecake</h3>
+                    <p>Classic cheesecake with fresh berry compote</p>
+                    <p class="price">$12</p>
+                </div>
+                <div class="menu-item">
+                    <h3>Chocolate Cake</h3>
+                    <p>Warm chocolate cake with vanilla ice cream</p>
+                    <p class="price">$14</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="contact section">
+        <h2>Visit Us</h2>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>Hours of Operation</h3>
+                <p>Monday - Thursday: 3:30 PM - 10:00 PM</p>
+                <p>Friday: 3:30 PM - 11:00 PM</p>
+                <p>Saturday: 12:00 PM - 11:00 PM</p>
+                <p>Sunday: 2:00 PM - 9:30 PM</p>
+            </div>
+
+            <div class="contact-info">
+                <h3>Reservations</h3>
+                <p>For the best dining experience, we recommend making a reservation.</p>
+                <p class="phone">(801) 834-0225</p>
+            </div>
+
+            <div class="contact-info">
+                <h3>Location</h3>
+                <p>11511 S 4000 W 102</p>
+                <p>South Jordan, UT 84095</p>
+                <p>Free parking available</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/p/Toro-Steak-and-Cocktails-61555165932456/">Facebook</a>
+                    <a href="https://www.instagram.com/torosteakcocktails/?hl=en">Instagram</a>
+                    <a href="https://www.yelp.com/biz/toro-steak-and-cocktails-south-jordan">Yelp</a>
+                </div>
+            </div>
+        </div>
+    </section>>
+
+    <footer class="footer">
+        <p>&copy; 2025 Toro Steak & Cocktails. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+    
+
