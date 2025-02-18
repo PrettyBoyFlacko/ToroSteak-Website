@@ -36,21 +36,22 @@
 
         .top-logo {
             position: absolute;
-            top: 0;
+            top: 6.25rem;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(0, 0, 0, 0.95);
-            padding: var(--spacing-md) var(--spacing-xl);
-            border-radius: 0 0 2rem 2rem;
-            box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.2);
-            z-index: 1001;
-            border: 0.0625rem solid rgba(212, 175, 55, 0.3);
-            border-top: none;
+            z-index: 1002;
+            padding: var(--spacing-lg);
+            background: rgb(255, 255, 255);
+            border-radius: 65%;
+            border: 0.125rem solid var(--gold);
+            box-shadow: 0 0.25rem 1.875rem rgba(0,0,0,0.3);
+            /*border: 0.0625rem solid rgba(212, 175, 55, 0.3);*/
         }
 
         .top-logo img {
             height: 5rem;
             width: auto;
+            display: block;
         }
 
         .header {
@@ -130,6 +131,7 @@
         .hero-content {
             margin-top: 7.5rem;
             z-index: 1;
+            padding: 0 var(--spacing-md);
         }
 
         .hero-content h1 {
@@ -284,6 +286,18 @@
         }
 
         @media (max-width: 48rem) {
+            .top-logo {
+                top: 2rem;
+                padding: var(--spacing-md);
+            }
+
+            .top-logo img {
+                height: 5rem;
+            }
+
+            .hero-content {
+                margin-top: 10rem; /* Increased to avoid overlap */
+            }
             .hero-content h1 {
                 font-size: 3rem;
             }
@@ -320,12 +334,30 @@
             }
 
             @media (max-width: 24rem) {
-            .btn-group {
-                grid-template-columns: 1fr;
+                .top-logo {
+                top: 1rem;
+                padding: var(--spacing-sm);
+            }
+
+            .top-logo img {
+                height: 4rem;
+            }
+
+            .hero-content {
+                margin-top: 8rem;
             }
 
             .hero-content h1 {
                 font-size: 2.5rem;
+            }
+
+            .btn-group {
+                grid-template-columns: 1fr;
+                width: 85%;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
             }
         }
         }
