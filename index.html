@@ -224,6 +224,25 @@
             border-radius: 0.3125rem;
             margin-bottom: var(--spacing-md);
         }
+
+        .menu-item h3 {
+            color: #1a1a1a;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .menu-item p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .menu-item .price {
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: #d4af37;
+            margin-bottom: 0;
+        }
+
         .contact {
             background: #1a1a1a;
             color: white;
@@ -240,6 +259,25 @@
             right: 0;
             height: 1px;
             background: linear-gradient(to right, transparent, #d4af37, transparent);
+        }
+
+        .contact h2 {
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            color: white;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .contact h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 2px;
+            background: #d4af37;
         }
 
         .contact-grid {
@@ -276,6 +314,21 @@
             color: rgba(255,255,255,0.9);
         }
 
+        .social-links {
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            color: #d4af37;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: white;
+        }
+
         .footer {
             background: #111;
             color: white;
@@ -285,32 +338,142 @@
             letter-spacing: 1px;
         }
 
+        /* Mobile-specific styles for two-column layout */
         @media (max-width: 768px) {
-        .contact {
-            padding: 4rem 1rem;
-        }
-        
-        .contact-grid {
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            padding: 0 1rem;
-        }
+            .menu-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--spacing-sm);
+            }
 
-        .contact-info {
-            padding: 2rem;
-        }
+            .menu-item {
+                padding: var(--spacing-sm);
+            }
 
-        .contact-info h3 {
-            font-size: 1.75rem;
-            margin-bottom: 1.5rem;
-        }
+            .menu-item h3 {
+                font-size: 1.1rem;
+                margin-bottom: 0.5rem;
+            }
 
-        .contact-info p {
-            font-size: 1.1rem;
+            .menu-item p {
+                font-size: 0.9rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .menu-item .price {
+                font-size: 1.1rem;
+            }
+
+            .menu-section {
+                padding: var(--spacing-xl) var(--spacing-md);
+            }
+
+            .menu-section h2 {
+                font-size: 2.5rem;
+                margin-bottom: 2rem;
+            }
+
+            .contact {
+                padding: 4rem 1rem;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 0 1rem;
+            }
+
+            .contact-info {
+                padding: 2rem;
+            }
+
+            .contact-info h3 {
+                font-size: 1.75rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .contact-info p {
+                font-size: 1.1rem;
+            }
         }
-    }
 
         @media (max-width: 480px) {
+            .top-logo {
+                top: 2rem;
+                padding: var(--spacing-md);
+            }
+
+            .top-logo img {
+                height: 4rem;
+            }
+
+            .hero-content {
+                margin-top: 8rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+
+            .nav-links {
+                gap: var(--spacing-md);
+            }
+
+            .nav-links a {
+                font-size: 1rem;
+            }
+
+            .btn-group {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--spacing-sm);
+                width: 90%;
+                margin: var(--spacing-xl) auto 0;
+            }
+
+            .btn {
+                width: 100%;
+                padding: var(--spacing-sm);
+                font-size: 0.9rem;
+                text-align: center;
+            }
+
+            .menu-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.5rem;
+            }
+
+            .menu-item {
+                padding: 0.75rem;
+            }
+
+            .menu-item h3 {
+                font-size: 1rem;
+                margin-bottom: 0.3rem;
+            }
+
+            .menu-item p {
+                font-size: 0.8rem;
+                line-height: 1.4;
+                margin-bottom: 0.3rem;
+            }
+
+            .menu-item .price {
+                font-size: 1rem;
+            }
+
+            .menu-section {
+                padding: var(--spacing-lg) var(--spacing-sm);
+            }
+
+            .menu-section h2 {
+                font-size: 2rem;
+                margin-bottom: 1.5rem;
+            }
+
             .contact {
                 padding: 3rem 1rem;
             }
@@ -333,87 +496,38 @@
             }
         }
 
-        @media (max-width: 48rem) {
-            .top-logo {
-                top: 2rem;
-                padding: var(--spacing-md);
-            }
-
-            .top-logo img {
-                height: 5rem;
-            }
-
-            .hero-content {
-                margin-top: 10rem; /* Increased to avoid overlap */
-            }
-            .hero-content h1 {
-                font-size: 3rem;
-            }
-            
-            .hero-content p {
-                font-size: 1.4rem;
-            }
-
-            .nav-links {
-                gap: var(--spacing-md);
-            }
-
-            .nav-links a {
-                font-size: 1rem;
-            }
-
+        @media (max-width: 320px) {
             .menu-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .btn-group {
-                display: grid;
                 grid-template-columns: repeat(2, 1fr);
-                gap: var(--spacing-sm);
-                width: 90%;
-                margin: var(--spacing-xl) auto 0;
+                gap: 0.25rem;
             }
 
-            .btn {
-                width: 100%;
-                padding: var(--spacing-sm);
+            .menu-item {
+                padding: 0.5rem;
+            }
+
+            .menu-item h3 {
                 font-size: 0.9rem;
-                text-align: center;
             }
 
-            @media (max-width: 24rem) {
-                .top-logo {
-                top: 1rem;
-                padding: var(--spacing-sm);
+            .menu-item p {
+                font-size: 0.75rem;
             }
 
-            .top-logo img {
-                height: 4rem;
-            }
-
-            .hero-content {
-                margin-top: 8rem;
-            }
-
-            .hero-content h1 {
-                font-size: 2.5rem;
+            .menu-item .price {
+                font-size: 0.9rem;
             }
 
             .btn-group {
                 grid-template-columns: 1fr;
                 width: 85%;
             }
-
-            .hero-content p {
-                font-size: 1.2rem;
-            }
-        }
         }
     </style>
 </head>
 <body>
     <div class="top-logo">
-        <img src="unnamed.png"  alt="Toro Steak & Cocktails Logo">
+        <img src="unnamed.png" alt="Toro Steak & Cocktails Logo">
     </div>
 
     <div class="hero">
@@ -434,242 +548,239 @@
     </div>
 
     <div class="menu-section" id="appetizers">
-        <div class="menu-section">
-            <h2>Appetizers</h2>
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <h3>Shrimp Cocktails</h3>
-                    <p>5 Jumbo shrimp served with house-made cocktail sauce</p>
-                    <p class="price">$13</p>
-                </div>
-                <div class="menu-item">
-                    <h3>Fried Calamari</h3>
-                    <p>Deep fried calamari rings</p>
-                    <p class="price">$9</p>
-                </div>
-                <div class="menu-item">
-                    <h3>Chicken Wings</h3>
-                    <p>Chicken wings coated in juicy breading</p>
-                    <p class="price">$11</p>
-                </div>
-                <div class="menu-item">
-                    <h3>Tuna Tataki</h3>
-                    <p>Lightly seared tuna with house ponzu sauce</p>
-                    <p class="price">$15</p>
-                </div>
+        <h2>Appetizers</h2>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <h3>Shrimp Cocktails</h3>
+                <p>5 Jumbo shrimp served with house-made cocktail sauce</p>
+                <p class="price">$13</p>
+            </div>
+            <div class="menu-item">
+                <h3>Fried Calamari</h3>
+                <p>Deep fried calamari rings</p>
+                <p class="price">$9</p>
+            </div>
+            <div class="menu-item">
+                <h3>Chicken Wings</h3>
+                <p>Chicken wings coated in juicy breading</p>
+                <p class="price">$11</p>
+            </div>
+            <div class="menu-item">
+                <h3>Tuna Tataki</h3>
+                <p>Lightly seared tuna with house ponzu sauce</p>
+                <p class="price">$15</p>
             </div>
         </div>
+    </div>
 
-        <div class="menu-section" id="soups">
-            <h2>Soups</h2>
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <h3>Baked Potato Soup</h3>
-                    <p>Rich and creamy soup with baked potatoes, crispy bacon, cheddar cheese, and fresh chives</p>
-                    <p class="price">$5</p>
-                </div>
-                <div class="menu-item">
-                    <h3>Clam chowder</h3>
-                    <p>Rich, creamy soup with tender clams and potatoes.</p>
-                    <p class="price">$5</p>
-                </div>
+    <div class="menu-section" id="soups">
+        <h2>Soups</h2>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <h3>Baked Potato Soup</h3>
+                <p>Rich and creamy soup with baked potatoes, crispy bacon, cheddar cheese, and fresh chives</p>
+                <p class="price">$5</p>
+            </div>
+            <div class="menu-item">
+                <h3>Clam chowder</h3>
+                <p>Rich, creamy soup with tender clams and potatoes.</p>
+                <p class="price">$5</p>
             </div>
         </div>
+    </div>
 
-        <div class="menu-section" id="salads">
-            <h2>Salads</h2>
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <h3>Chicken Caesar Salad</h3>
-                    <p>Crisp romaine lettuce, grilled chicken, parmesan cheese, and crunchy croutons, tossed in creamy Caesar dressing</p>
-                    <p class="price">$12</p>
-                </div>
-                <div class="menu-item">
-                    <h3>Grilled Salmon Salad</h3>
-                    <p>House salad topped with fresh grilled salmon filet</p>
-                    <p class="price">$18</p>
-                </div>
-                <div class="menu-item">
-                    <h3>Seared Ahi Tuna Salad</h3>
-                    <p>Fresh tuna seared to perfection over the salad</p>
-                    <p class="price">$18</p>
-                </div>
+    <div class="menu-section" id="salads">
+        <h2>Salads</h2>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <h3>Chicken Caesar Salad</h3>
+                <p>Crisp romaine lettuce, grilled chicken, parmesan cheese, and crunchy croutons, tossed in creamy Caesar dressing</p>
+                <p class="price">$12</p>
+            </div>
+            <div class="menu-item">
+                <h3>Grilled Salmon Salad</h3>
+                <p>House salad topped with fresh grilled salmon filet</p>
+                <p class="price">$18</p>
+            </div>
+            <div class="menu-item">
+                <h3>Seared Ahi Tuna Salad</h3>
+                <p>Fresh tuna seared to perfection over the salad</p>
+                <p class="price">$18</p>
             </div>
         </div>
+    </div>
 
-        <div class="menu-section" id="sides">
-            <h2>Sides</h2>
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <h3>Creamy Mashed Potatoes</h3>
-                    <p>Whipped with butter and cream until perfectly smooth</p>
-                    <p class="price">$6</p>
-                </div>
-                <div class="menu-item">
-                    <h3>Baked Potatoes</h3>
-                    <p>Fluffy, oven-baked potatoes with a crispy skin, served with butter and toppings</p>
-                    <p class="price">$6</p>
-                </div>
-                <div class="menu-item">
-                    <h3>Stir Fried Zucchini</h3>
-                    <p>Tender zucchini slices sautéed with garlic and herbs for a light, savory flavor</p>
-                    <p class="price">$6</p>
-                </div>
-                <div class="menu-item">
-                    <h3>Grilled Asparagus</h3>
-                    <p>Smoky, charred asparagus spears seasoned with olive oil and spices</p>
-                    <p class="price">$6</p>
-                </div>
-                <div class="menu-item">
-                    <h3>French Fries</h3>
-                    <p>Crispy, golden fries, lightly salted and served hot</p>
-                    <p class="price">$6</p>
-                </div>
-                <div class="menu-item">
-                    <h3>Stir Fried Mini Sweet Peppers</h3>
-                    <p>Colorful, sautéed sweet peppers with a slight caramelized finish</p>
-                    <p class="price">$6</p>
-                </div>
-                <div class="menu-item">
-                    <h3>House Green Salad</h3>
-                    <p>Crisp artisan greens tossed with vine-ripened tomatoes, cucumber ribbons, and shaved carrots</p>
-                    <p class="price">$6</p>
-                </div>
+    <div class="menu-section" id="sides">
+        <h2>Sides</h2>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <h3>Creamy Mashed Potatoes</h3>
+                <p>Whipped with butter and cream until perfectly smooth</p>
+                <p class="price">$6</p>
+            </div>
+            <div class="menu-item">
+                <h3>Baked Potatoes</h3>
+                <p>Fluffy, oven-baked potatoes with a crispy skin, served with butter and toppings</p>
+                <p class="price">$6</p>
+            </div>
+            <div class="menu-item">
+                <h3>Stir Fried Zucchini</h3>
+                <p>Tender zucchini slices sautéed with garlic and herbs for a light, savory flavor</p>
+                <p class="price">$6</p>
+            </div>
+            <div class="menu-item">
+                <h3>Grilled Asparagus</h3>
+                <p>Smoky, charred asparagus spears seasoned with olive oil and spices</p>
+                <p class="price">$6</p>
+            </div>
+            <div class="menu-item">
+                <h3>French Fries</h3>
+                <p>Crispy, golden fries, lightly salted and served hot</p>
+                <p class="price">$6</p>
+            </div>
+            <div class="menu-item">
+                <h3>Stir Fried Mini Sweet Peppers</h3>
+                <p>Colorful, sautéed sweet peppers with a slight caramelized finish</p>
+                <p class="price">$6</p>
+            </div>
+            <div class="menu-item">
+                <h3>House Green Salad</h3>
+                <p>Crisp artisan greens tossed with vine-ripened tomatoes, cucumber ribbons, and shaved carrots</p>
+                <p class="price">$6</p>
             </div>
         </div>
+    </div>
 
-        <div class="menu-section" id="entrees">
-            <h2>Entrées</h2>
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <h3>New York Steak</h3>
-                    <p>12oz prime cut, perfectly marbled for maximum flavor</p>
-                    <p class="price">$32</p>
-                </div>
-                <div class="menu-item">
-                    <h3>Ribeye Steak</h3>
-                    <p>12oz prime cut, juicy, well-marbled steak, grilled to perfection for rich flavor and tenderness</p>
-                    <p class="price">$38</p>
-                </div>
-                <div class="menu-item">
-                    <h3>Porterhouse Steak</h3>
-                    <p>22oz of thick, flavorful cut featuring both tender filet mignon and rich New York strip</p>
-                    <p class="price">$58</p>
-                </div>
-                <div class="menu-item">
-                    <h3>Bone-in Ribeye</h3>
-                    <p>20oz, rich, juicy ribeye with deep marbling and bold flavor, grilled on the bone for extra tenderness</p>
-                    <p class="price">$58</p>
-                </div>
-                <div class="menu-item">
-                    <h3>Prime Filet Mignon</h3>
-                    <p>8oz, exceptionally tender, buttery steak with a delicate, melt-in-your-mouth texture</p>
-                    <p class="price">$38</p>
-                </div>
-                <div class="menu-item">
-                    <h3>Grilled Salmon</h3>
-                    <p>8oz of fresh, flaky salmon fillet, perfectly grilled with a hint of smoky char</p>
-                    <p class="price">$26</p>
-                </div>
-                <div class="menu-item">
-                    <h3>Baby Back Ribs</h3>
-                    <p>Half</p>
-                    <p class="price">$21</p>
-                    <p>Full</p>
-                    <p class="price">$27</p>
-                </div>
-                <div class="menu-item">
-                <div class="menu-item">
-                    <h3>Cheese Burger</h3>
-                    <p>Juicy beef patty topped with melted cheese, served on a toasted bun with classic toppings</p>
-                    <p class="price">$18</p>
-                </div>
+    <div class="menu-section" id="entrees">
+        <h2>Entrées</h2>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <h3>New York Steak</h3>
+                <p>12oz prime cut, perfectly marbled for maximum flavor</p>
+                <p class="price">$32</p>
+            </div>
+            <div class="menu-item">
+                <h3>Ribeye Steak</h3>
+                <p>12oz prime cut, juicy, well-marbled steak, grilled to perfection for rich flavor and tenderness</p>
+                <p class="price">$38</p>
+            </div>
+            <div class="menu-item">
+                <h3>Porterhouse Steak</h3>
+                <p>22oz of thick, flavorful cut featuring both tender filet mignon and rich New York strip</p>
+                <p class="price">$58</p>
+            </div>
+            <div class="menu-item">
+                <h3>Bone-in Ribeye</h3>
+                <p>20oz, rich, juicy ribeye with deep marbling and bold flavor, grilled on the bone for extra tenderness</p>
+                <p class="price">$58</p>
+            </div>
+            <div class="menu-item">
+                <h3>Prime Filet Mignon</h3>
+                <p>8oz, exceptionally tender, buttery steak with a delicate, melt-in-your-mouth texture</p>
+                <p class="price">$38</p>
+            </div>
+            <div class="menu-item">
+                <h3>Grilled Salmon</h3>
+                <p>8oz of fresh, flaky salmon fillet, perfectly grilled with a hint of smoky char</p>
+                <p class="price">$26</p>
+            </div>
+            <div class="menu-item">
+                <h3>Baby Back Ribs</h3>
+                <p>Half</p>
+                <p class="price">$21</p>
+                <p>Full</p>
+                <p class="price">$27</p>
+            </div>
+            <div class="menu-item">
+                <h3>Cheese Burger</h3>
+                <p>Juicy beef patty topped with melted cheese, served on a toasted bun with classic toppings</p>
+                <p class="price">$18</p>
             </div>
         </div>
+    </div>
 
-        <div class="menu-section">
-            <h2>Extra Add-Ons</h2>
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <h3>Scallops</h3>
-                    <p>Tender, seared scallops with a delicate, buttery flavor</p>
-                    <p class="price">$16</p>
-                </div>
-                <div class="menu-item">
-                    <h3>Pan Fried Shrimps</h3>
-                    <p>Succulent shrimp sautéed to perfection with garlic and herbs</p>
-                    <p class="price">$8</p>
-                </div>
-                <div class="menu-item">
-                    <h3>Lobster</h3>
-                    <p>Sweet, juicy lobster, cooked to bring out its rich, natural flavor</p>
-                    <p class="price">$19</p>
-                </div>
+    <div class="menu-section">
+        <h2>Extra Add-Ons</h2>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <h3>Scallops</h3>
+                <p>Tender, seared scallops with a delicate, buttery flavor</p>
+                <p class="price">$16</p>
+            </div>
+            <div class="menu-item">
+                <h3>Pan Fried Shrimps</h3>
+                <p>Succulent shrimp sautéed to perfection with garlic and herbs</p>
+                <p class="price">$8</p>
+            </div>
+            <div class="menu-item">
+                <h3>Lobster</h3>
+                <p>Sweet, juicy lobster, cooked to bring out its rich, natural flavor</p>
+                <p class="price">$19</p>
             </div>
         </div>
+    </div>
 
-        <div class="menu-section" id="kids">
-            <h2>Kids Entrées</h2>
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <h3>Junior Steak</h3>
-                    <p>6oz tender sirloin steak, served with crispy french fries</p>
-                    <p>Cooked to your child's preference</p>
-                    <p class="price">$12</p>
-                </div>
-                <div class="menu-item">
-                    <h3>Chicken Tenders</h3>
-                    <p>Hand-breaded chicken tenders with crispy french fries</p>
-                    <p>Served with honey mustard or BBQ sauce</p>
-                    <p class="price">$12</p>
-                </div>
+    <div class="menu-section" id="kids">
+        <h2>Kids Entrées</h2>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <h3>Junior Steak</h3>
+                <p>6oz tender sirloin steak, served with crispy french fries</p>
+                <p>Cooked to your child's preference</p>
+                <p class="price">$12</p>
+            </div>
+            <div class="menu-item">
+                <h3>Chicken Tenders</h3>
+                <p>Hand-breaded chicken tenders with crispy french fries</p>
+                <p>Served with honey mustard or BBQ sauce</p>
+                <p class="price">$12</p>
             </div>
         </div>
+    </div>
 
-        <div class="menu-section" id="drinks">
-            <h2>Drinks</h2>
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <h3>Wine Selection</h3>
-                    <p>Extensive wine list available in-person. Ask your server for recommendations</p>
-                    <p class="price">Market Price</p>
-                </div>
-                <div class="menu-item">
-                    <h3>Craft Cocktails</h3>
-                    <p>Classic and signature cocktails made with premium spirits</p>
-                    <p class="price">From $16</p>
-                </div>
+    <div class="menu-section" id="drinks">
+        <h2>Drinks</h2>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <h3>Wine Selection</h3>
+                <p>Extensive wine list available in-person. Ask your server for recommendations</p>
+                <p class="price">Market Price</p>
+            </div>
+            <div class="menu-item">
+                <h3>Craft Cocktails</h3>
+                <p>Classic and signature cocktails made with premium spirits</p>
+                <p class="price">From $16</p>
             </div>
         </div>
+    </div>
 
-        <div class="menu-section" id="desserts">
-            <h2>Desserts</h2>
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <h3>New York Cheesecake</h3>
-                    <p>Classic cheesecake with fresh berry compote</p>
-                    <p class="price">$6</p>
-                </div>
-                <div class="menu-item">
-                    <h3>Ultimate Chocolate Cake</h3>
-                    <p>Warm chocolate cake with vanilla ice cream</p>
-                    <p class="price">$6</p>
-                </div>
-                <div class="menu-item">
-                    <h3>Vanilla Ice Cream</h3>
-                    <p>Creamy, classic vanilla ice cream with a smooth, rich flavor</p>
-                    <p class="price">$5</p>
-                </div>
-                <div class="menu-item">
-                    <h3>Chocolate Ice Cream</h3>
-                    <p>Decadent, creamy chocolate ice cream made with rich cocoa</p>
-                    <p class="price">$5</p>
-                </div>
-                <div class="menu-item">
-                    <h3>Strawberry Ice Cream</h3>
-                    <p>Refreshing, fruity ice cream with a sweet, natural strawberry flavor</p>
-                    <p class="price">$5</p>
-                </div>
+    <div class="menu-section" id="desserts">
+        <h2>Desserts</h2>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <h3>New York Cheesecake</h3>
+                <p>Classic cheesecake with fresh berry compote</p>
+                <p class="price">$6</p>
+            </div>
+            <div class="menu-item">
+                <h3>Ultimate Chocolate Cake</h3>
+                <p>Warm chocolate cake with vanilla ice cream</p>
+                <p class="price">$6</p>
+            </div>
+            <div class="menu-item">
+                <h3>Vanilla Ice Cream</h3>
+                <p>Creamy, classic vanilla ice cream with a smooth, rich flavor</p>
+                <p class="price">$5</p>
+            </div>
+            <div class="menu-item">
+                <h3>Chocolate Ice Cream</h3>
+                <p>Decadent, creamy chocolate ice cream made with rich cocoa</p>
+                <p class="price">$5</p>
+            </div>
+            <div class="menu-item">
+                <h3>Strawberry Ice Cream</h3>
+                <p>Refreshing, fruity ice cream with a sweet, natural strawberry flavor</p>
+                <p class="price">$5</p>
             </div>
         </div>
     </div>
@@ -710,5 +821,3 @@
     </footer>
 </body>
 </html>
-    
-
